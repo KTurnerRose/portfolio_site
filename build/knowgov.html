@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KnowGov</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,SOFT@0,9..144,50;1,9..144,50&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css" class="css">
+    <script src="js/main.js" defer></script>
+</head>
+<body class="min-h-screen bg-white dark:bg-slate-900 font-karla">
+    <header class="bg-slate-50 dark:bg-slate-800 text-slate-700 dark:text-white top-0 z-10">
+        <section class="max-w-6xl sm:mx-auto p-4 flex justify-between ">
+            <div class="sm:mx-auto">
+                <nav class="hidden sm:block space-x-8 text-2xl" aria-label="main">
+                    <a href="index.html" class="hover:opacity-70">about</a>
+                    <a class="text-5xl font-medium font-caveat">Kelly Turner's</a>
+                    <a href="work.html" class="hover:opacity-70">work</a>
+                    <a class="text-5xl font-medium font-caveat">&</a>
+                    <a href="gallery.html" class="hover:opacity-70">art</a>
+                </nav>
+            </div>
+            <h1 class="text-5xl left-0 font-medium font-caveat sm:hidden ">Kelly Turner</h1>
+            <button id="hamburger-button" class="text-5xl sm:hidden cursor-pointer self-end">
+                <!--&#9776;-->
+                <div class="dark:bg-white bg-slate-700 w-8 h-1 absolute top-10 right-5 before:content-[''] before:bg-slate-700 transition-all duration-300 before:dark:bg-white before:w-8 before:h-1 before:absolute before:-translate-x-4 before:-translate-y-3 before:transition-all before:duration-300 after:bg-slate-700 after:dark:bg-white after:w-8 after:h-1 after:absolute after:transition-all after:duration-300 after:-translate-x-4 after:translate-y-3"></div>
+            </button>
+        </section>
+        <section id="mobile-menu" class="transition-all duration-200 z-50 absolute top-68 w-full text-5xl flex-col hidden cursor-pointer bg-slate-50 dark:bg-slate-800 text-slate-700 dark:text-white">
+            <!--<button class="text-5xl self-end px-6 py-6">
+                &times;
+            </button>-->
+            <nav class="flex flex-col min-h-screen items-center space-y-8 py-8 text-3xl" aria-label="mobile">
+                <a href="index.html" class="hover:opacity-70">about</a>
+                <a href="work.html" class="hover:opacity-70">work</a>
+                <a href="gallery.html" class="hover:opacity-70">gallery</a>
+            </nav>
+        </section>
+    </header>
+    <aside id="side-menu" class="duration-300 flex max-w-[240px] flex-col gap-3 h-screen w-60 right-0 top-0 fixed text-xl text-theme-orange dark:text-dark-theme-orange" aria-label="sidebarMenu">
+        <a href="javascript:void(0)" id="closeBtn" class="text-right text-4xl" onclick="closeNav()">&times;</a>
+        <a href="#intro" class="hover:opacity-90 hover:italic">Intro</a>
+        <a href="#background" class="hover:opacity-90 hover:italic">Background</a>
+        <a href="#competitive-audit" class="hover:opacity-90 hover:italic">Competitive Audit</a>
+        <a href="#user-research" class="hover:opacity-90 hover:italic">User Research</a>
+        <a href="#personas" class="hover:opacity-90 hover:italic">Personas</a>
+        <a href="#ideation" class="hover:opacity-90 hover:italic">Ideation</a>
+        <a href="#lowfi" class="hover:opacity-90 hover:italic">LowFi Prototype</a>
+        <a href="#usability" class="hover:opacity-90 hover:italic">Usability Study</a>
+        <a href="#hifi" class="hover:opacity-90 hover:italic">HiFi Prototype</a>
+        <a href="#responsive" class="hover:opacity-90 hover:italic">Responsive Website</a>
+        <a href="#takeaways" class="hover:opacity-90 hover:italic">Takeaways</a>
+    </aside>
+    <div id="openBtn" class="px-5 right-0 fixed duration-300 ">
+        <!-- This is used to open the menu -->
+        <span class="cursor-pointer text-theme-orange dark:text-dark-theme-orange text-4xl font-bold" onclick="openNav()">&#9001;</span>
+    </div>
+    <style>
+        #side-menu {
+            width: 0;
+            position: fixed;
+            z-index: 1;
+            right: 0;
+            padding-top: 60px;
+            }
+    </style>
+    <main id="main" class="max-w-7xl mx-auto duration-300">
+        <button class="sun top-5 left-10 fixed"><span id="sun" class="text-2xl text-white">☼</span></button>
+        <button class=" moon top-5 left-10 fixed"><span id="moon" class="text-2xl">☾</span></button>
+        <section id="intro" class="flex flex-col-reverse justify-center sm:flex-row items-center gap-2 mb-6">
+            <article class="mt-16 w-full mx-auto">
+                <div class="md:flex lg:flex sm:block">
+                    <div class="md:w-1/2 lg:w-1/2 max-sm:w-5/6 max-sm:mx-auto items-center justify-center">
+                        <h1 class="mx-auto max-w-md text-6xl max-sm:text-5xl font-fraunces italic font-bold sm:text-left text-theme-orange dark:text-dark-theme-orange">
+                            KnowGov
+                        </h1>
+                        <p class="font-light mx-auto max-w-md text-2xl mt-4 sm:text-left text-slate-600 dark:text-slate-200 mb-7">
+                            An app and responsive site that delivers unbiased breakdowns of political events and legislation, so users can quickly learn and understand political news and get involved.
+                        </p>
+                        <h2 class="mx-auto max-w-md text-xl font-light sm:text-left text-slate-800 dark:text-slate-100">
+                             Duration
+                        </h2>
+                        <p class="font-light mx-auto max-w-md text-2xl mt-1 mb-3 sm:text-left text-slate-600 dark:text-slate-200">
+                            February 2023 - March 2023
+                        </p>
+                        <p class=" max-w-md my-6 sm:text-left mx-auto text-2xl text-theme-orange dark:text-dark-theme-orange hover:italic">
+                            <a target="_blank" href="https://docs.google.com/presentation/d/1eOzrN7NMe1sHymKPlt1pYKcUQL6xIf8b_aj3Q-immTc/export/pdf" >View Project Presentation</a>
+                        </p>
+                            
+                    </div>
+                    <div class="md:w-1/2 lg:w-1/2 sm:w-full"><img src="img/knowgov/desktop_mobile_final_display.png" alt="me" class="object-cover"></div>
+                </div>
+            </article>
+        </section>
+        <section id="background" class="p-6 max-sm:px-0.5 my-3 left-0">
+            <div>
+                <h2 class="text-4xl mx-auto text-slate-800 dark:text-white font-caveat text-center mb-3">Background</h2>
+                <p class="text-2xl font-light text-slate-700 dark:text-slate-100 mb-8 mx-auto w-4/5">
+                    In our current highly polarized political landscape many news sources have turned to opinion-based reporting for shock value and "us versus them" appeal to viewers of specific political orientations.  Social media struggles to fact-check the constant influx of posts on government activity, and users fall victim to algorithms that guide them towards extreme corners of the internet.
+                </p>
+                <p class="text-2xl font-light text-slate-700 dark:text-slate-100 mb-8 mx-auto w-4/5">               
+                    It can be challenging for the average American to find a truly unbiased source for political news.  Federal sites that provide this information often are targeted towards researchers instead of users who want quick explanations of legislative activity.</p>
+                <div class="w-4/5 mx-auto border-dashed border-2 dark:border-dark-theme-orange border-theme-orange rounded-sm">
+                    <p class="p-3 italic text-slate-700 dark:text-slate-100 text-2xl font-light mx-auto">How might we simplify how users learn about legislation and government?</p>
+                </div>
+            </div>
+        </section>
+        <section id="competitive-audit" class="p-6 max-sm:px-0.5 my-3 left-0">
+            <div>
+                <h2 class="text-4xl mx-auto text-slate-800 dark:text-white font-caveat text-center mb-3">Competitive Audit</h2>
+                <p class="text-2xl font-light text-slate-700 dark:text-slate-100 mb-8 mx-auto w-4/5">Research was conducted on competitors who have attempted to solve this issue.  It was concluded that most competitor products are targeted toward those working in public policy or in journalism, or users finding primary sources for research.  There are not many products that combine tracking legislation and politician activity, and those that do tend to have significant paywalls.
+                </p>
+                <img src="img/knowgov/competitive_audit.png" class="mx-auto">
+            </div>
+        </section>
+        <section id="user-research" class="p-6 max-sm:px-0.5 my-3 left-0">
+            <div>
+                <h2 class="text-4xl mx-auto text-slate-800 dark:text-white font-caveat text-center mb-3">User Research</h2>
+                <p class="text-2xl font-light text-slate-700 dark:text-slate-100 mb-8 mx-auto w-4/5">Participants were asked what they would want from a government legislation and events update site.  These participants were U.S. citizens who live in rural, suburban and urban areas, and of them there were equal groups of men and women. One popular suggestion from participants was to format the post listings about legislation like social media posts, but without comment sections and suggestion algorithms.</p>
+            </div>
+        </section>
+        <section id="personas" class="p-6 max-sm:px-0.5 my-3 left-0">
+            <h2 class="text-4xl mx-auto text-slate-800 dark:text-white font-caveat text-center mb-3">Personas</h2>
+            <p class="text-2xl font-light text-slate-700 dark:text-slate-100 mb-8 mx-auto w-4/5">The goals, frustrations and backgrounds of users interviewed were summarized into two user personas.
+            </p>
+            <h3 class="font-caveat text-4xl font-medium text-theme-orange dark:text-dark-theme-orange mb-6 text-center mx-auto w-4/5">Beverly Yuan
+            </h3>
+            <div class="flex flex-col-reverse justify-center sm:flex-row items-center gap-1 mb-3 font-light">
+                <div class="md:w-1/4 lg:w-1/2 sm:w-full text-xl">
+                    <p class=" text-slate-700 dark:text-slate-100 mb-6 mx-auto w-4/5">Age: 24<br/> Education: Bachelors
+                    </p>
+                    <p class=" text-slate-700 dark:text-slate-100 mb-1 mx-auto w-4/5">Goals
+                    </p>
+                    <li class=" text-slate-700 dark:text-slate-100 mb-2 mx-auto w-4/5">Stay updated on politics without spending too much time</li>
+                    <li class=" text-slate-700 dark:text-slate-100 mb-2 mx-auto w-4/5">Become more knowledgeable on US government</li>
+                </div>
+                <div class="md:w-1/4 lg:w-1/2 sm:w-full">
+                    <img alt="A young east Asian woman" class="w-[300px] h-[300px] object-cover rounded-full mx-auto" src="img/knowgov/bevYuan.png">
+                </div>
+                <div class="md:w-1/4 lg:w-1/2 sm:w-full text-xl font-light">
+                    <p class=" text-slate-700 dark:text-slate-100 mb-6 mx-auto w-4/5">Hometown: Rochester, NY<br/> Job: Electrical Engineer<br /> Political Party: Democrat
+                    </p>
+                    <p class=" text-slate-700 dark:text-slate-100 mb-1 mx-auto w-4/5">Frustrations
+                    </p>
+                    <li class=" text-slate-700 dark:text-slate-100 mb-2 mx-auto w-4/5">Finds it overwhelming trying to understand legislation</li>
+                    <li class=" text-slate-700 dark:text-slate-100 mb-2 mx-auto w-4/5">Wants to be politically informed but doesn't have enough time to properly research</li>
+                </div>
+            </div>
+            
+            <p class="text-xl font-light text-slate-700 dark:text-slate-100 mb-6 mx-auto w-4/5">Beverly is a busy electrical engineer recently out of university.  She wants to stay involved in local and federal politics but does not have the time to research each bill.  She would like to be informed for when she votes in elections, through a trusted and nonpartisan information source.
+            </p>
+            <hr class="mx-auto  w-1/2 my-20">
+            <h3 class="font-caveat text-4xl font-medium text-theme-orange dark:text-dark-theme-orange mb-6 text-center mx-auto w-4/5">Jay Ayra
+            </h3>
+            <div class="flex flex-col-reverse justify-center sm:flex-row items-center gap-1 mb-3">
+                <div class="md:w-1/4 lg:w-1/2 sm:w-full text-xl font-light">
+                    <p class=" text-slate-700 dark:text-slate-100 mb-6 mx-auto w-4/5">Age: 60<br/> Education: Masters
+                    </p>
+                    <p class=" text-slate-700 dark:text-slate-100 mb-1 mx-auto w-4/5">Goals
+                    </p>
+                    <li class=" text-slate-700 dark:text-slate-100 mb-2 mx-auto w-4/5">Learn more about bills being proposed, and how they would impact him and his family</li>
+                    <li class=" text-slate-700 dark:text-slate-100 mb-2 mx-auto w-4/5">Get involved in local politics</li>
+                </div>
+                <div class="md:w-1/4 lg:w-1/2 sm:w-full">
+                    <img alt="A middle-aged Indian American man" class="w-[300px] h-[300px] object-cover rounded-full mx-auto" src="img/knowgov/jayArya.png">
+                </div>
+                <div class="md:w-1/4 lg:w-1/2 sm:w-full text-xl font-light">
+                    <p class=" text-slate-700 dark:text-slate-100 mb-6 mx-auto w-4/5">Hometown: Savannah, GA<br/> Job: Recently retired<br /> Political Party: Republican
+                    </p>
+                    <p class=" text-slate-700 dark:text-slate-100 mb-1 mx-auto w-4/5">Frustrations
+                    </p>
+                    <li class=" text-slate-700 dark:text-slate-100 mb-2 mx-auto w-4/5">Hard to find an unbiased explanation of bills and government news</li>
+                    <li class=" text-slate-700 dark:text-slate-100 mb-2 mx-auto w-4/5">Not very tech savvy</li>
+                </div>
+            </div>
+
+            <p class="text-xl font-light text-slate-700 dark:text-slate-100 mb-6 mx-auto w-4/5">Jay is a recently retired professional who wants to inform himself of local/federal government news in his new free time.  He wants an unbiased, centralized news source that breaks down proposed bills, shows him how they would impact citizens, and shows him how he can get involved.
+            </p>
+        </section>
+        <section id="ideation" class="p-6 max-sm:px-0.5 my-3 left-0">
+            <h2 class="text-4xl mx-auto text-slate-800 dark:text-white font-caveat text-center mb-3">Ideation</h2>
+            <p class="text-2xl font-light text-slate-700 dark:text-slate-100 mb-8 mx-auto w-4/5">With user interests and the problem in mind, features for KnowGov were connected into a sitemap.  Users can toggle between local and federal government articles directly on the home page.  The 'Education' page teaches users about local and federal government, the 'Events' page has resources to help users get involved in causes they care about, and the 'User Account' page shows a user's saved articles and events.
+            </p>
+            <img class="w-full mx-auto" src="img/knowgov/userflow2023.png">
+            <hr class="mx-auto  w-1/2 my-20">
+            <p class="text-2xl font-light text-slate-700 dark:text-slate-100 mb-8 mx-auto w-4/5">Crazy Eights was used to brainstorm layouts for the KnowGov mobile app.  Different variations on searching and filtering legislation and events articles were designed with current social media apps in mind.  Acessibility considerations such as voice-directed scrolling were also added to legislation article deisgns.
+            </p>
+            <div class=" items-center mx-auto grid md:grid-cols-1 lg:grid-cols-2 gap-2">
+                <img alt="First page of wireframes.  List of what to include on the homepage: trending searches/topics, search bar, legislation, button on legislation posts to save to favorites, event reminders, toggle between local and federal government." class="w-full" src="img/knowgov/wireframe2.png">
+                <img alt="Second page of wireframes.  Idea to enter zip code to bring up a user's local government.  Layout of legislation updates page.  Layout of simplified and complex versions of a legislation article." class="w-full" src="img/knowgov/wireframe3.png">
+                <img alt="Third page of wireframes.  Two layouts for home page, one with an events carousel and another with option to add/delete tags that filter events and legislation updates" class="w-4/5" src="img/knowgov/wireframe1.png">
+            </div>
+        </section>
+        <section id="lowfi" class="p-6 max-sm:px-0.5 my-3 left-0">
+            <h2 class="text-4xl mx-auto text-slate-800 dark:text-white font-caveat text-center mb-3">Low-Fidelity Prototypes</h2>
+            <p class="text-2xl font-light text-slate-700 dark:text-slate-100 mb-8 mx-auto w-4/5">Prioritized elements from the paper wireframes were included in the low-fidelity prototype.  Each legislation article had a 'simplified' page followed by a 'complex' page, so users can choose whether or not to take a deeper dive into the issue.
+            </p>
+            <div class="items-center w-4/5 mx-auto grid md:grid-cols-2 lg:grid-cols-2 gap-3">
+                <p class=" max-w-md my-6 sm:text-left mx-auto text-2xl text-theme-orange dark:text-dark-theme-orange hover:italic"><a href="https://www.figma.com/proto/Wp9jJBjAuyDcB46PfaFNxM/KnowGov?type=design&node-id=53-1028&t=IQo336BUHMv5cy1d-0&scaling=scale-down&page-id=53%3A1025&starting-point-node-id=53%3A1028" target="_blank">View LowFi Prototype</a></p>
+                <img alt="Gif of interaction with home page, legislation article page, user account page and user saved legislation/events page." class="w-1/2 top-0 mr-[100px] mx-auto" src="img/knowgov/lowfi_flow.gif">
+            </div>
+        </section>
+        <section id="usability" class="p-6 max-sm:px-0.5 my-3 left-0">
+            <h2 class="text-4xl mx-auto text-slate-800 dark:text-white font-caveat text-center mb-3">Usability Study</h2>
+            <p class="text-2xl font-light text-slate-700 dark:text-slate-100 mb-8 mx-auto w-4/5">Users recommended that the 'simplified' and 'complex' explanations of legislation should be combined into one page, since they found the two-page structure to be more confusing than helpful.  A drop-down menu was also suggested for legislation explanation pages, to quickly jump to information sections instead of scrolling down a long page. Titles for sections of the home page were suggested for easier navigation.
+            </p>
+        </section>
+        <section id="hifi" class="p-6 max-sm:px-0.5 my-3 left-0">
+            <h2 class="text-4xl mx-auto text-slate-800 dark:text-white font-caveat text-center mb-3">High-Fidelity App Prototype</h2>
+            <p class="text-2xl font-light text-slate-700 dark:text-slate-100 mb-8 mx-auto w-4/5">For the high-fidelity mobile app prototype, user recommendations such as 'scroll up' buttons, clearer user flows, and descriptions of sections, were included. Larger text sizes were kept from the low-fidelity prototypes after participants found everything easy to read. Accent colors that passed contrast accessibility tests were incorporated.
+            </p>
+            <div class="items-center w-4/5 mx-auto grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-3">
+                <p class=" max-w-md my-6 sm:text-left mx-auto text-2xl text-theme-orange dark:text-dark-theme-orange hover:italic"><a href="https://www.figma.com/proto/Wp9jJBjAuyDcB46PfaFNxM/KnowGov?node-id=843-10&t=YENcMVxXBqWhw1iu-0&scaling=scale-down&content-scaling=fixed&page-id=843%3A2&starting-point-node-id=843%3A10" target="_blank">View Hifi Mobile App Prototype</a></p>
+                <img alt="Preview of high fidelity 2024 mobile app prototype." class="w-1/2 top-0 mx-auto" src="img/knowgov/hifi_mobile_app24.png">
+            </div>
+        </section>
+        <section id="responsive" class="p-6 max-sm:px-0.5 my-3 left-0">
+            <h2 class="text-4xl mx-auto text-slate-800 dark:text-white font-caveat text-center mb-3">Responsive Website</h2>
+            <p class="text-2xl font-light text-slate-700 dark:text-slate-100 mb-8 mx-auto w-4/5">While it primarily references the structure of the high-fidelity app prototype, the KnowGov website has a navigation menu that directly links to all main pages and uses desktop and tablet screens to its advantage for layouts of elements such as filtering options.
+            </p>
+            <img class="w-4/5 mx-auto" src="img/knowgov/userflow2024.png">
+            <hr class="mx-auto  w-1/2 my-20">
+            <p class="text-2xl font-light text-slate-700 dark:text-slate-100 mb-8 mx-auto w-4/5">Each page of the site includes a menu to change the site's language and adjust its accessibility options.  Elements were redesigned to better fit each device, and text size was increased when possible.  The color palette was also adjusted for higher contrast.
+            </p>
+            <div class="items-center mx-auto grid md:grid-cols-2 lg:grid-cols-2 sm:grid-cols-1 gap-1">
+                <div class="w-full h-full">
+                    <img alt="Preview of high fidelity 2024 mobile website prototype." class="w-1/3 top-0 mx-auto" src="img/knowgov/hifi_mobile_site24.png">
+                    <p class="text-2xl font-medium text-theme-orange dark:text-dark-theme-orange my-6 mx-auto text-center w-4/5 hover:italic"><a href="https://www.figma.com/proto/Wp9jJBjAuyDcB46PfaFNxM/KnowGov?node-id=531-1291&t=9CT137VUFlODMuHy-0&scaling=scale-down&page-id=531%3A1290&starting-point-node-id=531%3A1291" target="_blank">View HiFi Mobile Website</a></p>
+                </div>
+                <div class="w-full h-full">
+                    <img alt="Preview of high fidelity 2024 tablet website prototype." class="w-1/2 top-0 mx-auto" src="img/knowgov/hifi_tablet_site24.png">
+                    <p class="text-2xl font-medium text-theme-orange dark:text-dark-theme-orange my-6 mx-auto text-center w-4/5 hover:italic"><a href="https://www.figma.com/proto/Wp9jJBjAuyDcB46PfaFNxM/KnowGov?node-id=479-2753&t=9CT137VUFlODMuHy-0&scaling=scale-down&page-id=479%3A2742&starting-point-node-id=479%3A2753" target="_blank">View HiFi Tablet Website</a>
+                    </p>
+                </div>
+            </div>
+            <div class="w-1/2 max-sm:w-full h-full mx-auto">
+                <img alt="Preview of high fidelity 2024 desktop website prototype." class="w-full top-0 mx-auto" src="img/knowgov/hifi_desktop_site24.png">
+                <p class="text-2xl font-medium text-theme-orange dark:text-dark-theme-orange my-6 mx-auto text-center w-4/5 hover:italic"><a href="https://www.figma.com/proto/Wp9jJBjAuyDcB46PfaFNxM/KnowGov?node-id=531-530&t=9CT137VUFlODMuHy-0&scaling=scale-down&page-id=531%3A529&starting-point-node-id=531%3A530" target="_blank">View HiFi Desktop Website</a>
+                </p>
+            </div>
+        </section>
+        <section id="takeaways" class="p-6 max-sm:px-0.5 my-3 left-0">
+            <h2 class="text-4xl mx-auto text-slate-800 dark:text-white font-caveat text-center mb-3">Takeaways</h2>
+            <div class="w-full max-sm:w-5/6 mx-auto grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-12 max-sm:gap-2">
+                <div>
+                    <p class="text-2xl font-light text-slate-700 dark:text-slate-100 mb-8 mx-auto w-full">
+                        Strategies meant to make a user experience more efficient (such as the 'simplified' and 'complex' versions of legislation pages) don't always work that way for users.
+                    </p>
+                    <p class="text-2xl font-light text-slate-700 dark:text-slate-100 mb-8 mx-auto w-full">
+                        Increase text sizes and section sizes, heighten color contrast, and make space for an accessibility menu, then review and lean further into each of these to make a theme more accessible.</p>
+                </div>
+                <div>
+                    <p class="text-2xl font-light text-slate-700 dark:text-slate-100 mb-8 mx-auto w-full">
+                        Rethink how each page is structured when designing for different devices and use the features of a device to the design's advantage when possible.
+                    </p>
+                    <p class="text-2xl font-light text-slate-700 dark:text-slate-100 mb-8 mx-auto w-full">
+                        Continually compare current designs to competitors' final products to assess whether or not the design includes the 'best' elements of these products.</p>
+                </div>
+                
+            </div>
+        </section>
+        <section class="flex max-sm:flex-col my-5 ">
+            <div class="flex max-sm:w-full space-x-4 w-2/5 p-6 text-black dark:text-slate-100">
+                <a href="pharmanyc.html"><span class="cursor-pointer text-4xl font-medium">&#x2190;</span></a>
+                <div>
+                    <a class="text-4xl font-light hover:italic" href="pharmanyc.html">PharmaNYC</a>
+                    <p class=" text-xl font-light " >Adding functionality to a local pharmacy's website</p>
+                </div>
+            </div>
+            <div class="flex max-sm:w-full ml-auto space-x-4 w-2/5 p-6 pl-20 text-black dark:text-slate-100">
+                <div class="text-right ">
+                    <a class="text-4xl font-light hover:italic" href="nutripet.html">NutriPet</a>
+                    <p class="text-xl font-light" >Pet food and nutrition tracker app </p>
+                </div>
+                <a href="nutripet.html"><span class="cursor-pointer text-4xl font-medium">&#x2192;</span></a>
+            </div>
+        </section>
+    </main>
+    <footer class="bg-slate-50 dark:bg-slate-800 text-slate-700 dark:text-slate-100 bottom-0 z-10">
+        <section class="max-w-6xl mx-auto p-4 flex justify-between items-center my-auto">
+            <h1 class="text-md left-0 font-light mx-auto">© 2024 Kelly Turner</h1>
+            <p class="text-2xl">📰</p>
+            <h1 class="text-md left-0 font-light mx-auto">Created with TailwindCSS, hosted on Render</h1>
+        </section>
+    </footer>
+</body>
+</html>

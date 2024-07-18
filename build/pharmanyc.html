@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PharmaNYC</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,SOFT@0,9..144,50;1,9..144,50&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css" class="css">
+    <script src="js/main.js" defer></script>
+</head>
+<body class="min-h-screen bg-white dark:bg-slate-900 font-karla">
+    <header class="bg-slate-50 dark:bg-slate-800 text-slate-700 dark:text-white top-0 z-10">
+        <section class="max-w-6xl sm:mx-auto p-4 flex justify-between ">
+            <div class="sm:mx-auto">
+                <nav class="hidden sm:block space-x-8 text-2xl" aria-label="main">
+                    <a href="index.html" class="hover:opacity-70">about</a>
+                    <a class="text-5xl font-medium font-caveat">Kelly Turner's</a>
+                    <a href="work.html" class="hover:opacity-70">work</a>
+                    <a class="text-5xl font-medium font-caveat">&</a>
+                    <a href="gallery.html" class="hover:opacity-70">art</a>
+                </nav>
+            </div>
+            <h1 class="text-5xl left-0 font-medium font-caveat sm:hidden ">Kelly Turner</h1>
+            <button id="hamburger-button" class="text-5xl sm:hidden cursor-pointer self-end">
+                <!--&#9776;-->
+                <div class="dark:bg-white bg-slate-700 w-8 h-1 absolute top-10 right-5 before:content-[''] before:bg-slate-700 transition-all duration-300 before:dark:bg-white before:w-8 before:h-1 before:absolute before:-translate-x-4 before:-translate-y-3 before:transition-all before:duration-300 after:bg-slate-700 after:dark:bg-white after:w-8 after:h-1 after:absolute after:transition-all after:duration-300 after:-translate-x-4 after:translate-y-3"></div>
+            </button>
+        </section>
+        <section id="mobile-menu" class="transition-all duration-200 z-50 absolute top-68 w-full text-5xl flex-col hidden cursor-pointer bg-slate-50 dark:bg-slate-800 text-slate-700 dark:text-white">
+            <!--<button class="text-5xl self-end px-6 py-6">
+                &times;
+            </button>-->
+            <nav class="flex flex-col min-h-screen items-center space-y-8 py-8 text-3xl" aria-label="mobile">
+                <a href="index.html" class="hover:opacity-70">about</a>
+                <a href="work.html" class="hover:opacity-70">work</a>
+                <a href="gallery.html" class="hover:opacity-70">gallery</a>
+            </nav>
+        </section>
+    </header>
+    <aside id="side-menu" class="duration-300 flex max-w-[240px] flex-col gap-3 h-screen w-60 right-0 fixed top-0 text-xl text-theme-green dark:text-dark-theme-green" aria-label="sidebarMenu">
+        <a href="javascript:void(0)" id="closeBtn" class="text-right text-4xl" onclick="closeNav()">&times;</a>
+        <a href="#intro" class="hover:opacity-90 hover:italic">Intro</a>
+        <a href="#background" class="hover:opacity-90 hover:italic">Background</a>
+        <a href="#competitive-audit" class="hover:opacity-90 hover:italic">Competitive Audit</a>
+        <a href="#user-research" class="hover:opacity-90 hover:italic">User Research</a>
+        <a href="#personas" class="hover:opacity-90 hover:italic">Personas</a>
+        <a href="#ideation" class="hover:opacity-90 hover:italic">Ideation</a>
+        <a href="#lowfi" class="hover:opacity-90 hover:italic">LowFi Prototype</a>
+        <a href="#usability" class="hover:opacity-90 hover:italic">Usability Study</a>
+        <a href="#mockups" class="hover:opacity-90 hover:italic">Mockups</a>
+        <a href="#hifi" class="hover:opacity-90 hover:italic">HiFi Prototype</a>
+        <a href="#takeaways" class="hover:opacity-90 hover:italic">Takeaways</a>
+    </aside>
+    <div id="openBtn" class="px-5 right-0 fixed duration-300 ">
+        <!-- This is used to open the menu -->
+        <span class="cursor-pointer text-theme-green dark:text-dark-theme-green text-4xl font-bold" onclick="openNav()">&#9001;</span>
+    </div>
+    <style>
+        #side-menu {
+            width: 0;
+            position: fixed;
+            z-index: 1;
+            right: 0;
+            padding-top: 60px;
+            }
+    </style>
+    <main id="main" class="max-w-7xl mx-auto duration-300">
+        <button class="sun top-5 left-10 fixed"><span id="sun" class="text-2xl text-white">☼</span></button>
+        <button class=" moon top-5 left-10 fixed"><span id="moon" class="text-2xl">☾</span></button>
+        <section id="intro" class="flex flex-col-reverse justify-center sm:flex-row items-center gap-2 mb-6">
+            <article class="mt-16 w-full mx-auto">
+                <div class="md:flex lg:flex sm:block">
+                    <div class="md:w-1/2 lg:w-1/2 max-sm:w-5/6 max-sm:mx-auto items-center justify-center">
+                        <h1 class="mx-auto max-w-md text-6xl max-sm:text-5xl font-fraunces italic font-extrabold sm:text-left text-theme-green dark:text-dark-theme-green">
+                            PharmaNYC
+                        </h1>
+                        <p class="font-light mx-auto max-w-md text-2xl mt-4 sm:text-left text-slate-600 dark:text-slate-200 mb-7">
+                            A website for an independent pharmacy that lets users schedule vaccine appointments and check on prescriptions.
+                        </p>
+                        <h4 class="mx-auto max-w-md text-xl font-light sm:text-left text-slate-800 dark:text-slate-100">
+                             Duration
+                        </h4>
+                        <p class="font-light mx-auto max-w-md text-2xl mt-1 mb-3 sm:text-left text-slate-600 dark:text-slate-200">
+                            January 2023 - Febuary 2023
+                        </p>
+                        <p class="max-w-md my-6 sm:text-left mx-auto text-2xl text-theme-green dark:text-dark-theme-green hover:italic">
+                            <a target="_blank" href="https://docs.google.com/presentation/d/1NCyIFmDSH5lmMs7fnZRMDcmHRLIWzSKuZtpUOf3B8aw/edit#slide=id.p" >View Project Presentation</a>
+                        </p>
+                            
+                    </div>
+                    <div class="md:w-1/2 lg:w-1/2 sm:w-full"><img src="img/pharmanyc/desktop_hero_img.png" alt="The PharmaNYC site shown on a laptop" class="object-cover"></div>
+                </div>
+            </article>
+        </section>
+        <section id="background" class="p-6 max-sm:px-0.5 my-3">
+            <h2 class="text-4xl mx-auto text-slate-800 dark:text-white font-caveat text-center mb-3">Background</h2>
+            <p class="w-4/5 text-2xl font-light text-slate-700 dark:text-slate-100 mb-8 mx-auto">This small independent pharmacy based in New York City struggles to schedule and manage vaccine appointments with their current phone and manual system.</p>
+            <div class="w-4/5 mx-auto border-dashed border-2 dark:border-dark-theme-green border-theme-green rounded-sm">
+                <p class="p-3 italic text-slate-700 dark:text-slate-100 text-2xl font-light mx-auto">How might we establish more efficient and accurate communication between the pharmacists and their clients?</p>
+            </div>
+        </section>
+        <section id="competitive-audit" class="p-6 max-sm:px-0.5 my-3">
+            <h2 class="text-4xl mx-auto text-slate-800 dark:text-white font-caveat text-center mb-3">Competitive Audit</h2>
+            <p class="text-2xl font-light text-slate-700 dark:text-slate-100 mb-8 mx-auto w-4/5">Research was conducted on large chain pharmacies and local pharmacies to evaluate what they prioritized for their site, how they used design to establish their brand while providing functionality for as many users as possible, and how they helped users schedule vaccines online.
+            </p>
+            <img src="img/pharmanyc/competitive_audit.png" class="mx-auto">
+        </section>
+        <section id="user-research" class="p-6 max-sm:px-0.5 my-3">
+            <h2 class="text-4xl mx-auto text-slate-800 dark:text-white font-caveat text-center mb-3">User Research</h2>
+            <p class="text-2xl font-light text-slate-700 dark:text-slate-100 mb-8 mx-auto w-4/5">To get a sense about the users for the product, customers of the independent pharmacy were interviewed.  Those who scheduled vaccines in the past recalled their experience, and those who had not explained their reasons or what parts of the scheduling process dissuaded them.  The customers that were interviewed described what they would like to see from a vaccine scheduler website.
+            </p>
+            <p class="text-2xl font-light text-slate-700 dark:text-slate-100 mb-8 mx-auto w-4/5">Many participants felt the scheduling process was inefficient.  Customers who were hard-of-hearing struggled to communicate with pharmacists over the phone, to see print and to handwrite their information on vaccination forms.</p>
+        </section>
+        <section id="personas" class="p-6 max-sm:px-0.5 my-3">
+            <h2 class="text-4xl mx-auto text-slate-800 dark:text-white font-caveat text-center mb-3">Personas</h2>
+            <p class="text-2xl font-light text-slate-700 dark:text-slate-100 mb-8 mx-auto w-4/5">The goals, frustrations and backgrounds of users interviewed were summarized into two user personas.
+            </p>
+            <h3 class="font-caveat text-4xl font-medium text-theme-green dark:text-dark-theme-green mb-6 text-center mx-auto w-4/5">Ruth Jones
+            </h3>
+            <div class="flex flex-col-reverse justify-center sm:flex-row items-center gap-1 mb-3">
+                <div class="md:w-1/4 lg:w-1/2 sm:w-full font-light text-xl">
+                    <p class="text-slate-700 dark:text-slate-100 mb-6 mx-auto w-4/5">Age: 90<br/> Education: Bachelors
+                    </p>
+                    <p class="text-slate-700 dark:text-slate-100 mb-1 mx-auto w-4/5">Goals
+                    </p>
+                    <li class="text-slate-700 dark:text-slate-100 mb-2 mx-auto w-4/5">Communicate and schedule vaccine appointments with pharmacy</li>
+                    <li class="text-slate-700 dark:text-slate-100 mb-2 mx-auto w-4/5">Keep in touch with pharmacists easily</li>
+                </div>
+                <div class="md:w-1/4 lg:w-1/2 sm:w-full">
+                    <img alt="An older Jewish woman" class="w-[300px] h-[300px] object-cover rounded-full mx-auto" src="img/pharmanyc/ruth.jpg">
+                </div>
+                <div class="md:w-1/4 lg:w-1/2 sm:w-full text-xl font-light">
+                    <p class="text-slate-700 dark:text-slate-100 mb-6 mx-auto w-4/5">Hometown: New York, NY<br/> Job: Building Committee Board Member<br /> Years using pharmacy: 25
+                    </p>
+                    <p class="text-slate-700 dark:text-slate-100 mb-1 mx-auto w-4/5">Frustrations
+                    </p>
+                    <li class="text-slate-700 dark:text-slate-100 mb-2 mx-auto w-4/5">Is not very tech savvy</li>
+                    <li class=" text-slate-700 dark:text-slate-100 mb-2 mx-auto w-4/5">Is hard-of-hearing, so phone scheduling is difficult</li>
+                </div>
+            </div>
+            <p class="text-xl font-light text-slate-700 dark:text-slate-100 mb-6 mx-auto w-4/5">A longtime member of her community, Ruth has been a loyal customer of the independent pharmacy.  She needs many vaccines in her old age to protect her against getting sick, but both phone and website scheduling pose issues for her.
+            </p>
+            <hr class="mx-auto  w-1/2 my-20">
+            <h3 class="font-caveat text-4xl font-medium text-theme-green dark:text-dark-theme-green mb-6 text-center mx-auto w-4/5">Eric Mayorga
+            </h3>
+            <div class="flex flex-col-reverse justify-center sm:flex-row items-center gap-1 mb-3">
+                <div class="md:w-1/4 lg:w-1/2 sm:w-full font-light text-xl">
+                    <p class=" text-slate-700 dark:text-slate-100 mb-6 mx-auto w-4/5">Age: 45<br/> Education: Masters
+                    </p>
+                    <p class="text-slate-700 dark:text-slate-100 mb-1 mx-auto w-4/5">Goals
+                    </p>
+                    <li class="text-slate-700 dark:text-slate-100 mb-2 mx-auto w-4/5">Efficiently schedule vaccine appointments</li>
+                    <li class="text-slate-700 dark:text-slate-100 mb-2 mx-auto w-4/5">Enter and verify insurance coverage for prescriptions and vaccinations online</li>
+                </div>
+                <div class="md:w-1/4 lg:w-1/2 sm:w-full">
+                    <img alt="A black man in his thirties" class="w-[300px] h-[300px] object-cover rounded-full mx-auto" src="img/pharmanyc/eric.jpg">
+                </div>
+                <div class="md:w-1/4 lg:w-1/2 sm:w-full font-light text-xl">
+                    <p class="text-slate-700 dark:text-slate-100 mb-6 mx-auto w-4/5">Hometown: Baltimore, MD<br/> Job: Finance<br />Years using pharmacy: 1
+                    </p>
+                    <p class="text-slate-700 dark:text-slate-100 mb-1 mx-auto w-4/5">Frustrations
+                    </p>
+                    <li class="text-slate-700 dark:text-slate-100 mb-2 mx-auto w-4/5">Finds phone scheduling to be antiquated and error-prone</li>
+                    <li class="text-slate-700 dark:text-slate-100 mb-2 mx-auto w-4/5">In-person vaccine visits take longer when he has to fill out forms instead of completing them in advance</li>
+                </div>
+            </div>
+            <p class="text-xl font-light text-slate-700 dark:text-slate-100 mb-6 mx-auto w-4/5">Eric is a new member of his community and is trying out this pharmacy.  He is time conscious and is frustrated with the current scheduling process for vaccinations.  It has dissuaded him from supporting the pharmacy, even though he wants to support small businesses.
+            </p>
+        </section>
+        <section id="ideation" class="p-6 max-sm:px-0.5 my-3">
+            <h2 class="text-4xl mx-auto text-slate-800 dark:text-white font-caveat text-center mb-3">Ideation</h2>
+            <p class="text-2xl font-light text-slate-700 dark:text-slate-100 mb-8 mx-auto w-4/5">With user interests and the problem in mind, features for KnowGov were connected into a sitemap.  The home page is divided into abs for local and federal government articles.  The 'Education' page teaches users about local and federal government, the 'Events' page has resources to help users get involved in causes they care about, and the 'User Account' page shows a user's saved articles and events.
+            </p>
+            <img class="w-full mx-auto" src="img/pharmanyc/userflow.png">
+            <hr class="mx-auto  w-1/2 my-20">
+            <p class="text-2xl font-light text-slate-700 dark:text-slate-100 mb-8 mx-auto w-4/5">The Crazy Eights method was used to brainstorm layouts for wireframes. Wireframes A through E design for a desktop.
+            </p>
+            <div class=" items-center mx-auto grid md:grid-cols-1 lg:grid-cols-2 gap-2">
+                <img alt="First page of wireframes.  The first version of a desktop homepage has a horizontal menu with a music player, logo, user account icon, and below a list of links to pages.  There are blocks with a welcome statement, address information, vaccines available, featured author, and brands sold.  The second version includes the same elements and structure but with slight rearranging of menu items and resizing of information blocks.  The third version looks similar to the second, but with different resizing of information blocks in the main section." class="w-full" src="img/pharmanyc/wireframe2.png">
+                <img alt="Second page of wireframes.  This version of a desktop home page has the menu as a vertical sidebar, with the logo and main content to the right of it." class="w-full" src="img/pharmanyc/wireframe1.png">
+                <img alt="Third page of wireframes.  This version of a desktop home page also has a vertical menu sidebar, but in the main section the music player is on the right of the logo and there are two columns of information blocks below." class="w-full" src="img/pharmanyc/wireframe3.png">
+                <img alt="Fourth page of wireframes.  The wireframe for a tablet home page has a vertical menu sidebar, with the logo and music player at the top of the main section and a single column of information blocks below.  There is an accessiblity menu button floating to the side of the 'welcome' block.  The wireframe for a mobile home page has a hamburger menu to open a menu and the logo, music player, and information blocks stacked in a single column.  There is an accessibility menu button floating to the side of the 'welcome' block." class="w-full" src="img/pharmanyc/wireframe_tablet_mobile.png">
+            </div>
+            <hr class="mx-auto  w-1/2 my-20">
+            <p class="text-2xl font-light text-slate-700 dark:text-slate-100 mb-8 mx-auto w-4/5">The digital wireframes addressed user pain points, such as the need for an online vaccine scheduler and a site translation into Spanish, while also integrating prioritized elements from paper wireframes.
+            </p>
+            <div class=" items-center mx-auto grid md:grid-cols-1 lg:grid-cols-2">
+                <div class="w-full h-full">
+                    <p class="text-2xl font-medium text-slate-700 dark:text-white mb-8 mx-auto text-center w-4/5">Desktop Home Page
+                    </p>
+                    <img class="w-full mx-auto sm:mb-4" alt="Wireframe of the desktop home page.  There is a vertical nav menu on the left side and a main section on the right.  From top to bottom of the main section: the title of the site is next to an account icon, an animated carousel promoting shortcuts to specific pages like vaccine scheduling, a welcome blurb and image, the pharmacy's address and space for a map image/plugin, the headshot and description of the featured local author, and the footer with spaces for contact links and copyright. " src="img/pharmanyc/ewireframe.png">
+                </div>
+                <div class="w-full h-full">
+                    <p class="text-2xl font-medium text-slate-700 dark:text-white mb-8 max-sm:mt-8 mx-auto text-center w-4/5">Mobile Home Page
+                    </p>
+                    <img class="w-1/3 mx-auto" alt="Wireframe of mobile home page.  A hamburger menu links to a vertical nav menu.  From top to bottom: the title of the site is next to an account icon, an animated carousel promoting shortcuts to specific pages like vaccine scheduling, a welcome blurb and image, the pharmacy's address and space for a map image/plugin, the headshot and description of the featured local author, and the footer with spaces for contact links and copyright." src="img/pharmanyc/ewireframe_mobile.png">
+                </div>
+            </div>
+        </section>
+        <section id="lowfi" class="p-6 max-sm:px-0.5 my-3 ">
+            <h2 class="text-4xl mx-auto text-slate-800 dark:text-white font-caveat text-center mb-3">Low-Fidelity Prototypes</h2>
+            <p class="text-2xl font-light text-slate-700 dark:text-slate-100 mb-8 mx-auto w-4/5">The low-fidelity prototype incorporated concepts from the wireframes with some changes after user feedback, such as the navigation bar becoming horizontal.  Elements of the wireframes such as the vertical desktop menu were redesigned to better fit the device.
+            </p>
+            <div class="items-center mx-auto grid md:grid-cols-2 lg:grid-cols-2 sm:grid-cols-1 gap-1">
+                <div class="w-full h-full">
+                    <img alt="Preview of low-fidelity mobile website prototype." class="w-1/3 top-0 mx-auto" src="img/pharmanyc/lowfi_mobile.png">
+                    <p class="text-2xl font-medium text-theme-green dark:text-dark-theme-green my-6 mx-auto text-center w-4/5 hover:italic"><a href="https://www.figma.com/proto/R3jj4GjnJfD0GH39v2fg9W/PharmaNYC?node-id=657-1766&t=ETONxT5jbxM114yJ-0&scaling=scale-down&content-scaling=fixed&page-id=657%3A1765" target="_blank">View LowFi Mobile Website</a></p>
+                </div>
+                <div class="w-full h-full">
+                    <img alt="Preview of low-fidelity desktop website prototype." class="w-full top-0 mx-auto" src="img/pharmanyc/lowfi_desktop.png">
+                    <p class="text-2xl font-medium text-theme-green dark:text-dark-theme-green my-6 mx-auto text-center w-4/5 hover:italic"><a href="https://www.figma.com/proto/Wp9jJBjAuyDcB46PfaFNxM/KnowGov?node-id=772-467&t=yeINbr3kUR43noZg-0&scaling=scale-down&page-id=772%3A451&starting-point-node-id=772%3A467" target="_blank">View LowFi Tablet Website</a>
+                    </p>
+                </div>
+            </div>
+        </section>
+        <section id="usability" class="p-6 max-sm:px-0.5 my-3">
+            <h2 class="text-4xl mx-auto text-slate-800 dark:text-white font-caveat text-center mb-3">Usability Study</h2>
+            <p class="text-2xl font-light text-slate-700 dark:text-slate-100 mb-8 mx-auto w-4/5">Usability study participants reported they did not notice the ‘now playing’ function until almost the end of their test. Some recommended a horizontal navigation bar because they were more familiar with it from other sites.  
+            It was also pointed out that the pharmacists have German-speaking customers that might like a German site translation button.
+            </p>
+        </section>
+        <section id="mockups" class="p-6 max-sm:px-0.5 my-3">
+            <h2 class="text-4xl mx-auto text-slate-800 dark:text-white font-caveat text-center mb-3">Refining the Design: Mockups</h2>
+            <p class="text-2xl font-light text-slate-700 dark:text-slate-100 mb-8 mx-auto w-4/5">The original site color scheme was recreated, with additional shades of green for contrast.  A description of the ‘now playing’ function was added, as well as a section for brands sold at the store.  A German translation button was also added, taking into consideration the customer base and the languages the pharmacists speak.
+            </p>
+            <div class="items-center mx-auto grid md:grid-cols-2 lg:grid-cols-2 gap-1">
+                <div class="w-full h-full">
+                    <p class="text-2xl font-medium text-slate-700 dark:text-white mb-8 mx-auto text-center w-4/5">Desktop Home Page
+                    </p>
+                    <img alt="Home page mockup with green color scheme and images of a pharmacist's hands writing on a chart, the map location of the pharmacy, and the headshot of the featured local author.  There is a 'Now playing' button that matches what is playing at the pharmacy, buttons to translate the site to Spanish and German, a horizontal nav menu, and a button directly linking to the vaccine scheduling page.  At the bottom of the page there is an animated carousel of the brands the pharmacy is a licensed vender of." class="w-full top-0 mx-auto" src="img/pharmanyc/mockup_desktop_home.png">
+                </div>
+                <div class="w-full h-full">
+                    <p class="text-2xl font-medium text-slate-700 dark:text-white mb-8 max-sm:mt-8 mx-auto text-center w-4/5">Mobile Vaccine Scheduling
+                    </p>
+                    <img alt="Mobile vaccine scheduling page mockup with green color scheme.  The first section of the flow, 'Patient Info', is expanded, with options to enter personal and insurance information.  Below are the 'Choose Vaccines', 'Schedule Appointment', and 'Forms' sections of the flow.  Below the flow is a calendar of the week ahead, showing whether a day is filled for appointments if it is covered by a green square." class="w-1/3 top-0 mx-auto" src="img/pharmanyc/mockup_mobile_vaccines2.png">
+                </div>
+            </div>
+        </section>
+        <section id="hifi" class="p-6 max-sm:px-0.5 my-3 ">
+            <h2 class="text-4xl mx-auto text-slate-800 dark:text-white font-caveat text-center mb-3">High-Fidelity Prototype</h2>
+            <p class="text-2xl font-light text-slate-700 dark:text-slate-100 mb-8 mx-auto w-4/5">For the high-fidelity mobile app prototype, user recommendations such as 'scroll up' buttons, clearer user flows and descriptions of sections were included.
+            </p>
+            <div class="items-center mx-auto grid md:grid-cols-2 lg:grid-cols-2 sm:grid-cols-1 gap-1">
+                <div class="w-full h-full">
+                    <img alt="Preview of high-fidelity mobile website prototype." class="w-1/3 top-0 mx-auto" src="img/pharmanyc/hifi_mobile.png">
+                    <p class="text-2xl font-medium text-theme-green dark:text-dark-theme-green my-6 mx-auto text-center w-4/5 hover:italic"><a href="https://www.figma.com/proto/R3jj4GjnJfD0GH39v2fg9W/PharmaNYC?node-id=577-37&t=SNpMeGnlRdXWoVMa-1&scaling=scale-down&content-scaling=fixed&page-id=577%3A36&starting-point-node-id=577%3A37" target="_blank">View HiFi Mobile Website</a></p>
+                </div>
+                <div class="w-full h-full">
+                    <img alt="Preview of high-fidelity desktop website prototype." class="w-full top-0 mx-auto" src="img/pharmanyc/hifi_desktop.png">
+                    <p class="text-2xl font-medium text-theme-green dark:text-dark-theme-green my-6 mx-auto text-center w-4/5 hover:italic"><a href="https://www.figma.com/proto/R3jj4GjnJfD0GH39v2fg9W/PharmaNYC?node-id=700-6432&t=Qllhz88p30iWvGb3-0&scaling=scale-down&content-scaling=fixed&page-id=700%3A6431&starting-point-node-id=700%3A6432" target="_blank">View HiFi Desktop Website</a>
+                    </p>
+                </div>
+            </div>
+        </section>
+        <section id="takeaways" class="p-6 max-sm:px-0.5 my-3 left-0">
+            <h2 class="text-4xl mx-auto text-slate-800 dark:text-white font-caveat text-center mb-3">Takeaways</h2>
+            <div class="w-full max-sm:w-5/6 mx-auto grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-12 max-sm:gap-2">
+                <div>
+                    <p class="text-2xl font-light text-slate-700 dark:text-slate-100 mb-8 mx-auto w-full">
+                        Continually compare current designs to competitors' final products to assess whether or not the design includes the 'best' elements of these products.
+                    </p>
+                    <p class="text-2xl font-light text-slate-700 dark:text-slate-100 mb-8 mx-auto w-full">
+                        I applied my user research and my experience working with both customers and pharmacists to design a website that responds to each party's needs.
+                    </p>
+                </div>
+                <div>
+                    <p class="text-2xl font-light text-slate-700 dark:text-slate-100 mb-8 mx-auto w-full">
+                        I learned how to use Adobe XD to create prototypes, as well as how to use Figma to create sitemaps for a project.
+                    </p>
+                    <p class="text-2xl font-light text-slate-700 dark:text-slate-100 mb-8 mx-auto w-full">
+                        Brainstorming and extensive iteration on elements are both crucial for developing an accessible theme for all users.
+                    </p>
+                </div>
+                
+            </div>
+        </section>
+        <section class="flex max-sm:flex-col my-5">
+            <div class="flex max-sm:w-full space-x-4 w-2/5 p-6 text-black dark:text-slate-100">
+                <a href="knowgov.html"><span class="cursor-pointer text-4xl font-medium">&#x2190;</span></a>
+                <div>
+                    <a class="text-4xl font-light hover:italic" href="knowgov.html">KnowGov</a>
+                    <p class=" text-xl font-light " >Unbiased information and updates on legislation</p>
+                </div>
+            </div>
+            <div class="flex max-sm:w-full ml-auto space-x-4 w-2/5 p-6 text-black dark:text-slate-100">
+                <div class="text-right">
+                    <a class="text-4xl font-light hover:italic" href="nutripet.html">NutriPet</a>
+                    <p class="text-xl font-light pl-20" >Pet food and nutrition tracker app </p>
+                </div>
+                <a href="nutripet.html"><span class="cursor-pointer text-4xl font-medium">&#x2192;</span></a>
+            </div>
+        </section>
+    </main>
+    <footer class="bg-slate-50 dark:bg-slate-800 text-slate-700 dark:text-slate-100 bottom-0 z-10">
+        <section class="max-w-6xl mx-auto p-4 flex justify-between items-center my-auto">
+            <h1 class="text-md left-0 font-light mx-auto">© 2024 Kelly Turner</h1>
+            <p class="text-2xl">🧪</p>
+            <h1 class="text-md left-0 font-light mx-auto">Created with TailwindCSS, hosted on Render</h1>
+        </section>
+    </footer>
+</body>
+</html>

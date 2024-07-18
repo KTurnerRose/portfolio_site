@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NutriPet</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,SOFT@0,9..144,50;1,9..144,50&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css" class="css">
+    <script src="js/main.js" defer></script>
+</head>
+<body class="min-h-screen bg-white dark:bg-slate-900 font-karla">
+    <header class="bg-slate-50 dark:bg-slate-800 text-slate-700 dark:text-white top-0 z-10">
+        <section class="max-w-6xl sm:mx-auto p-4 flex justify-between ">
+            <div class="sm:mx-auto">
+                <nav class="hidden sm:block space-x-8 text-2xl" aria-label="main">
+                    <a href="index.html" class="hover:opacity-70">about</a>
+                    <a class="text-5xl font-medium font-caveat">Kelly Turner's</a>
+                    <a href="work.html" class="hover:opacity-70">work</a>
+                    <a class="text-5xl font-medium font-caveat">&</a>
+                    <a href="gallery.html" class="hover:opacity-70">art</a>
+                </nav>
+            </div>
+            <h1 class="text-5xl left-0 font-medium font-caveat sm:hidden ">Kelly Turner</h1>
+            <button id="hamburger-button" class="text-5xl sm:hidden cursor-pointer self-end">
+                <!--&#9776;-->
+                <div class="dark:bg-white bg-slate-700 w-8 h-1 absolute top-10 right-5 before:content-[''] before:bg-slate-700 transition-all duration-300 before:dark:bg-white before:w-8 before:h-1 before:absolute before:-translate-x-4 before:-translate-y-3 before:transition-all before:duration-300 after:bg-slate-700 after:dark:bg-white after:w-8 after:h-1 after:absolute after:transition-all after:duration-300 after:-translate-x-4 after:translate-y-3"></div>
+            </button>
+        </section>
+        <section id="mobile-menu" class="transition-all duration-200 z-50 absolute top-68 w-full text-5xl flex-col hidden cursor-pointer bg-slate-50 dark:bg-slate-800 text-slate-700 dark:text-white">
+            <!--<button class="text-5xl self-end px-6 py-6">
+                &times;
+            </button>-->
+            <nav class="flex flex-col min-h-screen items-center space-y-8 py-8 text-3xl" aria-label="mobile">
+                <a href="index.html" class="hover:opacity-70">about</a>
+                <a href="work.html" class="hover:opacity-70">work</a>
+                <a href="gallery.html" class="hover:opacity-70">gallery</a>
+            </nav>
+        </section>
+    </header>
+    <aside id="side-menu" class="duration-300 flex max-w-[240px] flex-col gap-3 h-screen w-60 right-0 fixed top-0 text-xl text-theme-purple dark:text-dark-theme-purple" aria-label="sidebarMenu">
+        <a href="javascript:void(0)" id="closeBtn" class="text-right text-4xl" onclick="closeNav()">&times;</a>
+        <a href="#intro" class="hover:opacity-90 hover:italic">Intro</a>
+        <a href="#background" class="hover:opacity-90 hover:italic">Background</a>
+        <a href="#user-research" class="hover:opacity-90 hover:italic">User Research</a>
+        <a href="#personas" class="hover:opacity-90 hover:italic">Personas</a>
+        <a href="#ideation" class="hover:opacity-90 hover:italic">Ideation</a>
+        <a href="#lowfi" class="hover:opacity-90 hover:italic">LowFi Prototype</a>
+        <a href="#usability" class="hover:opacity-90 hover:italic">Usability Study</a>
+        <a href="#mockups" class="hover:opacity-90 hover:italic">Mockups</a>
+        <a href="#hifi" class="hover:opacity-90 hover:italic">HiFi Prototype</a>
+        <a href="#takeaways" class="hover:opacity-90 hover:italic">Takeaways</a>
+    </aside>
+    <div id="openBtn" class="px-5 right-0 fixed duration-300 ">
+        <!-- This is used to open the menu -->
+        <span class="cursor-pointer text-theme-purple dark:text-dark-theme-purple text-4xl font-bold" onclick="openNav()">&#9001;</span>
+    </div>
+    <style>
+        #side-menu {
+            width: 0;
+            position: fixed;
+            z-index: 1;
+            right: 0;
+            padding-top: 60px;
+            }
+    </style>
+    <main id="main" class="max-w-7xl mx-auto duration-300">
+        <button class="sun top-5 left-10 fixed"><span id="sun" class="text-2xl text-white">☼</span></button>
+        <button class=" moon top-5 left-10 fixed"><span id="moon" class="text-2xl">☾</span></button>
+        <section id="intro" class="flex flex-col-reverse justify-center sm:flex-row items-center gap-2 mb-6">
+            <article class="mt-16 w-full mx-auto">
+                <div class="md:flex lg:flex sm:block">
+                    <div class="md:w-1/2 lg:w-1/2 max-sm:w-5/6 max-sm:mx-auto items-center justify-center">
+                        <h2 class=" mx-auto max-w-md text-6xl max-sm:text-5xl font-fraunces italic font-bold sm:text-left text-theme-purple dark:text-[#BBB1E2]">
+                            Nutripet
+                        </h2>
+                        <p class="font-light mx-auto max-w-md text-2xl mt-4 sm:text-left text-slate-600 dark:text-slate-200 mb-7">
+                            An app designed to help track pet health and nutrition and recommend healthy brands at a discounted rate.
+                        </p>
+                        <h4 class="mx-auto max-w-md text-xl font-light sm:text-left text-slate-800 dark:text-slate-100">
+                             Duration
+                        </h4>
+                        <p class="font-light mx-auto max-w-md text-2xl mt-1 mb-3 sm:text-left text-slate-600 dark:text-slate-200">
+                            September 2022 - January 2023
+                        </p>
+                        <p class="max-w-md my-6 sm:text-left mx-auto text-2xl text-theme-purple dark:text-dark-theme-purple hover:italic">
+                            <a target="_blank" href="https://docs.google.com/presentation/d/112lJq2XQTo-6ta-MdY8aQXQ-YftUSW1vUVGZK6F7-0I/edit" >View Project Presentation</a>
+                        </p>
+                            
+                    </div>
+                    <div class="md:w-1/2 lg:w-1/2 sm:w-full"><img src="img/nutripet/hifi_hero.png" alt="First person point of view holding a phone showing the home page of the NutriPet app." class="object-cover">
+                    </div>
+                </div>
+            </article>
+        </section>
+        <section id="background" class="p-6 max-sm:px-0.5 my-3">
+            <div>
+                <h2 class="text-4xl mx-auto text-slate-800 dark:text-white font-caveat text-center mb-3">Background</h2>
+                <p class="w-4/5 text-2xl font-light text-slate-700 dark:text-slate-100 mb-8 mx-auto">Many pets develop allergies and other health issues that demand a strict diet.  Pet owners often feel overwhelmed about tracking their pets’ information and finding the right pet foods in an oversaturated market.</p>
+                <div class="w-4/5 mx-auto border-dashed border-2 dark:border-dark-theme-purple border-theme-purple rounded-sm">
+                    <p class="p-3 italic text-slate-700 dark:text-slate-100 text-2xl font-light mx-auto">How might we help pet owners track their pets' health and find healthy and affordable pet foods?</p>
+                </div>
+            </div>
+        </section>
+        <section id="user-research" class="p-6 max-sm:px-0.5 my-3 ">
+            <div>
+                <h2 class="text-4xl mx-auto text-slate-800 dark:text-white font-caveat text-center mb-3">User Research</h2>
+                <p class="text-2xl font-light text-slate-700 dark:text-slate-100 mb-8 mx-auto w-4/5">Pet owners in my community were questioned about what they would want from a pet tracker app.  It was assumed beforehand that pet owners would only want an app to keep important pet information on hand and in one place.  After conducting research however, it was found that pet owners also would like a healthy food/treat database of offerings to search through and order for their pets with allergies and other special diet needs.
+                </p>
+            </div>
+        </section>
+        <section id="personas" class="p-6 max-sm:px-0.5 my-3 ">
+            <h2 class="text-4xl mx-auto text-slate-800 dark:text-white font-caveat text-center mb-3">Personas</h2>
+            <p class="text-2xl font-light text-slate-700 dark:text-slate-100 mb-8 mx-auto w-4/5">The goals, frustrations and backgrounds of users interviewed were summarized into two user personas.
+            </p>
+            <h3 class="font-caveat text-4xl font-medium text-theme-purple dark:text-dark-theme-purple mb-6 text-center mx-auto w-4/5">Xavier Bernard
+            </h3>
+            <div class="flex flex-col-reverse justify-center sm:flex-row items-center gap-1 mb-3">
+                <div class="md:w-1/4 lg:w-1/2 sm:w-full font-light text-xl">
+                    <p class="text-slate-700 dark:text-slate-100 mb-6 mx-auto w-4/5">Age: 43<br/> Education: Masters
+                    </p>
+                    <p class="text-slate-700 dark:text-slate-100 mb-1 mx-auto w-4/5">Goals
+                    </p>
+                    <li class="text-slate-700 dark:text-slate-100 mb-2 mx-auto w-4/5">Find the best foods for his guide dog</li>
+                    <li class="text-slate-700 dark:text-slate-100 mb-2 mx-auto w-4/5">Track dog’s health and log symptoms in case of bad reactions to food/ingredients</li>
+                </div>
+                <div class="md:w-1/4 lg:w-1/2 sm:w-full">
+                    <img alt="A visually impaired white man in his fourties sits in the grass with his guide dog." class="w-[300px] h-[300px] object-cover rounded-full mx-auto" src="img/nutripet/xavier.jpg">
+                </div>
+                <div class="md:w-1/4 lg:w-1/2 sm:w-full text-xl font-light">
+                    <p class="text-slate-700 dark:text-slate-100 mb-6 mx-auto w-4/5">Hometown: Raleigh, NC<br/> Job: Psychotherapist
+                    </p>
+                    <p class="text-slate-700 dark:text-slate-100 mb-1 mx-auto w-4/5">Frustrations
+                    </p>
+                    <li class="text-slate-700 dark:text-slate-100 mb-2 mx-auto w-4/5">Is visually impaired, needs in-app voice assistant</li>
+                    <li class=" text-slate-700 dark:text-slate-100 mb-2 mx-auto w-4/5">Needs voice-to-text for health logs</li>
+                    <li class=" text-slate-700 dark:text-slate-100 mb-2 mx-auto w-4/5">Wants reminders to re-order food when it is running low</li>
+                </div>
+            </div>
+            <p class="text-xl font-light text-slate-700 dark:text-slate-100 mb-6 mx-auto w-4/5">As a parent and therapist, Xavier struggles to find time to research the best foods for his guide dog Cora.  Xavier cannot read ingredient labels in person since he is visually impaired.  He recently learned Cora has gluten intolerance and wants to keep note of any reactions she has to food.
+            </p>
+            <hr class="mx-auto  w-1/2 my-20">
+            <h3 class="font-caveat text-4xl font-medium text-theme-purple dark:text-dark-theme-purple mb-6 text-center mx-auto w-4/5">Maria Delgado
+            </h3>
+            <div class="flex flex-col-reverse justify-center sm:flex-row items-center gap-1 mb-3">
+                <div class="md:w-1/4 lg:w-1/2 sm:w-full font-light text-xl">
+                    <p class="text-slate-700 dark:text-slate-100 mb-6 mx-auto w-4/5">Age: 31<br/> Education: High school
+                    </p>
+                    <p class="text-slate-700 dark:text-slate-100 mb-1 mx-auto w-4/5">Goals
+                    </p>
+                    <li class="text-slate-700 dark:text-slate-100 mb-2 mx-auto w-4/5">Find nutritional and affordable pet food</li>
+                    <li class="text-slate-700 dark:text-slate-100 mb-2 mx-auto w-4/5">Record her pet's food intake and health over time and assess overall nutrition</li>
+                </div>
+                <div class="md:w-1/4 lg:w-1/2 sm:w-full">
+                    <img alt="A latina woman in her early thirties smiles up from where she works at a computer while lying down in the grass next to her dog." class="w-[300px] h-[300px] object-cover rounded-full mx-auto" src="img/nutripet/maria.jpg">
+                </div>
+                <div class="md:w-1/4 lg:w-1/2 sm:w-full text-xl font-light">
+                    <p class="text-slate-700 dark:text-slate-100 mb-6 mx-auto w-4/5">Hometown: Oaxaca, MX<br/> Job: Small business owner
+                    </p>
+                    <p class="text-slate-700 dark:text-slate-100 mb-1 mx-auto w-4/5">Frustrations
+                    </p>
+                    <li class="text-slate-700 dark:text-slate-100 mb-2 mx-auto w-4/5">Is not fluent in English</li>
+                    <li class=" text-slate-700 dark:text-slate-100 mb-2 mx-auto w-4/5">Cannot run app that only works on newest phone models</li>
+                    <li class=" text-slate-700 dark:text-slate-100 mb-2 mx-auto w-4/5">Cannot afford in-app pay walls</li>
+                </div>
+            </div>
+            <p class="text-xl font-light text-slate-700 dark:text-slate-100 mb-6 mx-auto w-4/5">Maria recently immigrated to Austin, TX from Mexico with her partner and runs a small business.  She loves her rescue dog Bella, but has recently discovered Bella has food allergies and skin issues.  She wants a free app that translates to Spanish and that recommends affordable and healthy foods for Bella.
+            </p>
+        </section>
+        <section id="ideation" class="p-6 max-sm:px-0.5 my-3 ">
+            <h2 class="text-4xl mx-auto text-slate-800 dark:text-white font-caveat text-center mb-3">Ideation</h2>
+            <p class="text-2xl font-light text-slate-700 dark:text-slate-100 mb-8 mx-auto w-4/5">Paper wireframes iterated through different elements to find compromises between function and visual appeal, such as navigational buttons organized into a paw print.
+            </p>
+            <div class="items-center mx-auto">
+                <img alt="Paper wireframes for Nutripet, all different versions of the homepage.  First screen has menu navigation buttons organized into a pawprint at top and information in a single column below.  Second screen has an account button and the logo at the top and a line of tabs for subpages below, one for each pet.  Third screen has a hamburger menu in a top corner and a single column of information sections that when you tap lead to their own pages.  The pawprint button menu is at the bottom.  Fourth screen has the logo and hamburger menu at the top, an account/pet button in center, three columns of information, and a fun facts slideshow.  Fifth screen was the favorite, with a hamburger menu, logo and account button at top, introduction text, two columns about health and food, then a pawprint button menu at bottom.  Sixth screen has the line of tabs for subpages on each pet, and the pawprint button menu at bottom." class="w-3/5 max-sm:w-full mx-auto" src="img/nutripet/wireframes.png">
+                
+            </div>
+        </section>
+        <section id="lowfi" class="p-6 max-sm:px-0.5 my-3 ">
+            <h2 class="text-4xl mx-auto text-slate-800 dark:text-white font-caveat text-center mb-3">Low-Fidelity Prototypes</h2>
+            <p class="text-2xl font-light text-slate-700 dark:text-slate-100 mb-8 mx-auto w-4/5">Icons were implemented in sections like the allergies list for broader user understanding, and food listings were designed as interactive 'cards' to organize the page and allow for easy interaction. The 'filter' tab lets users control for factors like price point, ingredients, and pet age.
+            </p>
+            <div class="items-center w-4/5 mx-auto grid md:grid-cols-2 lg:grid-cols-2 gap-3">
+                <p class=" max-w-md my-6 sm:text-left mx-auto text-2xl text-theme-purple dark:text-dark-theme-purple hover:italic"><a href="https://www.figma.com/proto/WSvGpG09WKVj2rTXbRN7Tl/Pet-Nutrition-App-(Copy)-(Copy)?node-id=1-3&t=QkzPsftvriFXGjl0-0&scaling=scale-down&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=1%3A3" target="_blank">View LowFi Prototype</a></p>
+                <img alt="Preview of low fidelity prototype.  Gif of interaction with home page, food page, filter tab, checkout flow, and account page." class="w-1/2 top-0 min-sm:mr-[100px] mx-auto" src="img/nutripet/lowfi.gif">
+            </div>
+            
+        </section>
+        <section id="usability" class="p-6 max-sm:px-0.5 my-3 ">
+            <h2 class="text-4xl mx-auto text-slate-800 dark:text-white font-caveat text-center mb-3">Usability Study</h2>
+            <p class="text-2xl font-light text-slate-700 dark:text-slate-100 mb-8 mx-auto w-4/5">Participants tested the low-fidelity prototype according to prompts to complete user flows such as purchasing specific food for a pet.  Many did not recognize the navigation menu as a pawprint and recommended it be redesigned for clarity.  It was suggested that font and button size be increased.  Users did not understand some of the icons and wanted interactive and noninteractive elements to be more clearly differentiated.
+            </p>
+        </section>
+        <section id="mockups" class="p-6 max-sm:px-0.5 my-3 ">
+            <h2 class="text-4xl mx-auto text-slate-800 dark:text-white font-caveat text-center mb-3">Refining the Design: Mockups</h2>
+            <p class="text-2xl font-light text-slate-700 dark:text-slate-100 mb-8 mx-auto w-4/5">User feedback was implemented in the mockups for the app.
+            </p>
+            <div class="items-center mx-auto grid md:grid-cols-3 lg:grid-cols-3 gap-1">
+                <div class="w-full h-full">
+                    <p class="text-2xl font-medium text-slate-700 dark:text-white mx-auto text-center w-4/5">Home Page
+                    </p>
+                    <img alt="From top to bottom: hamburger menu, logo, account button, then slideshow with fun facts and articles, introductory text and information and accessibility menu button, row of shortcuts such as making notes or editing vet appointments, a bowl split into percentages representing what roughly makes up the pet's diet, and the pawpint menu with navigation buttons." class="w-4/5 top-0 mx-auto" src="img/nutripet/hifi_home.png">
+                </div>
+                <div class="w-full h-full">
+                    <p class="text-2xl font-medium text-slate-700 dark:text-white max-sm:mt-8 mx-auto text-center w-4/5">Pet Health Page
+                    </p>
+                    <img alt="From top to bottom: same header as homepage, buttons to create a health issue entry, button to upload health files, button to folder with uploaded files, horizontal button list of the pet's medications, button to edit medications, accessibility menu button, pet weight chart over time, pet's allergies list and button to edit." class="w-4/5 top-0 mx-auto" src="img/nutripet/hifi_health.png">
+                </div>
+                <div class="w-full h-full">
+                    <p class="text-2xl font-medium text-slate-700 dark:text-white max-sm:mt-8 mb-2 mx-auto text-center w-4/5">Food Listings Page
+                    </p>
+                    <img alt="From top to bottom: same header as homepage, button to open filter tab and shopping cart icon, 'recommended for pet' section with two-row horizontal list of food listings, 'recipes for pet' section with single-row horizontal list of recipe cards and tabs for recommended and saved recipes, accessibility menu button." class="w-4/5 top-0 mx-auto" src="img/nutripet/hifi_food.png">
+                </div>
+            </div>
+        </section>
+        <section id="hifi" class="p-6 max-sm:px-0.5 my-3 ">
+            <h2 class="text-4xl mx-auto text-slate-800 dark:text-white font-caveat text-center mb-3">High-Fidelity Prototype</h2>
+            <p class="text-2xl font-light text-slate-700 dark:text-slate-100 mb-8 mx-auto w-4/5">For the high-fidelity mobile app prototype, user recommendations such as 'scroll up' buttons, clearer user flows, and descriptions of sections, were included.
+            </p>
+            <div class="items-center w-4/5 mx-auto grid md:grid-cols-2 lg:grid-cols-2 gap-3">
+                <p class=" max-w-md my-6 sm:text-left mx-auto text-2xl text-theme-purple dark:text-dark-theme-purple hover:italic"><a href="https://www.figma.com/proto/WSvGpG09WKVj2rTXbRN7Tl/Pet-Nutrition-App-(Copy)-(Copy)?node-id=321-786&t=3EETuKBY3JF5mcxv-0&scaling=scale-down&content-scaling=fixed&page-id=321%3A785&starting-point-node-id=321%3A786" target="_blank">View HiFi Prototype</a></p>
+                <img alt="Preview of high fidelity prototype.  Gif of interaction with home page, food page, filter tab, checkout flow, and account page." class="w-1/2 top-0 mr-[100px] max-sm:mx-auto max-sm:w-4/5" src="img/nutripet/hifi_flow.gif">
+            </div>
+        </section>
+        <section id="takeaways" class="p-6 max-sm:px-0.5 my-3 ">
+            <h2 class="text-4xl mx-auto text-slate-800 dark:text-white font-caveat text-center mb-3">Takeaways</h2>
+            <div class="w-full max-sm:w-5/6 mx-auto grid max-sm:grid-cols-1 md:grid-cols-2 gap-12 max-sm:gap-2">
+                <div>
+                    <p class="text-2xl font-light text-slate-700 dark:text-slate-100 mb-8 mx-auto w-full">
+                        Icons and layouts that make sense to the designer aren't always understood or interpreted in the same way by users.
+                    </p>
+                    <p class="text-2xl font-light text-slate-700 dark:text-slate-100 mb-8 mx-auto w-full">
+                        Design guideline 'sticker' sheets help keep a design organized and help more clearly define interactive and non-interactive elements.
+                    </p>
+                </div>
+                <div>
+                    <p class="text-2xl font-light text-slate-700 dark:text-slate-100 mb-8 mx-auto w-full">
+                        Sometimes the design that is the most aesthetically pleasing doesn't translate to every user, and is not practical for the product.
+                    </p>
+                </div>
+                
+            </div>
+            
+        </section>
+        <section class="flex max-sm:flex-col my-5">
+            <div class="flex max-sm:w-full space-x-4 w-2/5 p-6 text-black dark:text-slate-100">
+                <a href="pharmanyc.html"><span class="cursor-pointer text-4xl font-medium">&#x2190;</span></a>
+                <div >
+                    <a class=" text-4xl font-light hover:italic" href="pharmanyc.html">PharmaNYC</a>
+                    <p class=" text-xl font-light " >Adding functionality to a local pharmacy's website</p>
+                </div>
+            </div>
+            <div class="flex max-sm:w-full ml-auto space-x-4 w-2/5 p-6 text-black dark:text-slate-100">
+                <div class="text-right ">
+                    <a class="text-4xl font-light hover:italic" href="knowgov.html">KnowGov</a>
+                    <p class=" text-xl font-light " >Unbiased information and updates on legislation</p>
+                </div>
+                <a href="knowgov.html"><span class="cursor-pointer text-4xl font-medium">&#x2192;</span></a>
+            </div>
+            
+        </section>
+    </main>
+    <footer class="bg-slate-50 dark:bg-slate-800 text-slate-700 dark:text-slate-100 bottom-0 z-10">
+        <section class="max-w-6xl mx-auto p-4 flex justify-between items-center my-auto">
+            <h1 class="text-md left-0 font-light mx-auto">© 2024 Kelly Turner</h1>
+            <p class="text-2xl">🐕</p>
+            <h1 class="text-md left-0 font-light mx-auto">Created with TailwindCSS, hosted on Render</h1>
+        </section>
+    </footer>
+</body>
+</html>
